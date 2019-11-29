@@ -1,0 +1,35 @@
+<h4>Terms List</h4>
+<table class="table table-hover table-inverse table-sm">
+  <thead class="thead-inverse">
+    <tr>
+      <th>#</th>
+      <th>Name</th>
+      <th>Description</th>
+      <th></th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr *ngFor="let item of terms;let i = index">
+      <td>{{i + 1 }}</td>
+      <td>{{item.name}}</td>
+      <td>{{item.description}}</td>
+      <td>
+        <a [routerLink]="['/terms/edit',item.id]" class="btn btn-info">
+          Edit
+        </a> |
+        <button (click)="deleteTerm(item.id)" class="btn btn-danger">
+          Delete
+        </button>
+      </td>
+    </tr>
+  </tbody>
+  <tfoot *ngIf="pagesCount > 1 && pagesCount > currentPage">
+    <tr>
+      <td colspan="3" class="text-center">
+        <button class="btn btn-primary" (click)="loadMore()" [disabled]="isLoading">
+          <span class="spinner-border" [hidden]="!isLoading"></span>
+          Load More </button>
+      </td>
+    </tr>
+  </tfoot>
+</table>

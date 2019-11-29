@@ -1,0 +1,11 @@
+<body>
+  <app-nav-menu></app-nav-menu>
+  <div class="container-fluid">
+    <div class="container">
+      <div [hidden]="!isLoading" class="text-center">
+        <span class="spinner-border text-danger"></span>
+      </div>
+      <router-outlet></router-outlet>
+    </div>
+  </div>
+</body>

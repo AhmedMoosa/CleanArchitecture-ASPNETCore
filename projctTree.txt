@@ -1,0 +1,21 @@
+* Demo.ApplicationCore
+ >> Entities
+	>> Term
+		>> Id , Name , Description
+ >> Interfaces
+	>> ITermsService
+ >> DTOs
+	>> InputTerm
+	>> Term
+* Demo.Infrastructure
+  >> Data
+	>> TermsContext
+  >> Services
+	>> TermsService
+* Demo.Web 
+  >> Controllers
+	>> TermsController
+  >> Views
+	>> Terms (Create, Edit , Delete , Display All )
+ 
+

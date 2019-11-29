@@ -1,0 +1,30 @@
+<div class="container" *ngIf="termForm">
+  <form [formGroup]="termForm" (ngSubmit)="submit(termForm.value)">
+    <div class="form-group">
+      <div class="form-label-group">
+        <label for="name">Name</label>
+        <div class="form-row">
+          <input type="text" [attr.maxlength]="nameMaxLength" formControlName="name" id="name"
+            placeholder="Type term name" class="form-control col-md-10">
+          <div class="col-md-2" *ngIf="termForm.get('name').value?.length > 0">
+            {{ termForm.get('name').value?.length}} /{{nameMaxLength}}
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="form-group">
+      <div class="form-label-group">
+        <label for="description">Description</label>
+        <textarea [attr.maxlength]="descMaxLength" formControlName="description" id="description"
+          placeholder="Type description name" class="form-control">
+            </textarea>
+        <p *ngIf="termForm.get('description').value?.length > 0">
+          {{ termForm.get('description').value?.length}} /{{descMaxLength}}
+        </p>
+      </div>
+    </div>
+    <button [disabled]="termForm.invalid || isLoading" type="submit" class="btn btn-primary">
+      <span class="spinner-border" [hidden]="!isLoading"></span>
+      Submit</button>
+  </form>
+</div>

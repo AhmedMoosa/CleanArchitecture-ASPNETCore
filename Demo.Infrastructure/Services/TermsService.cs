@@ -24,7 +24,7 @@ namespace Demo.Infrastructure.Services
         public async Task<OperationResult> CreateAsync(InputTerm entityToCreate)
         {
             var newTerm = _mapper.Map<Entities.Term>(entityToCreate);
-            var result = _context.Terms.Add(newTerm);
+            await _context.Terms.AddAsync(newTerm);
             await _context.SaveChangesAsync();
             return OperationResult.Succeeded();
         }

@@ -8,7 +8,6 @@ namespace Demo.Infrastructure
 {
     public class AutoMapperProfiles
     {
-
         public class TermProfile : Profile
         {
             public TermProfile()
